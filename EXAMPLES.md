@@ -10,8 +10,8 @@
 
 4. Добавьте зависимость в необходимый контроллер.
 
-	``@Autowired
-	private PaginationBuilder paginationBuilder;``
+	``@Autowired``
+	``private PaginationBuilder paginationBuilder;``
 
 5. Инициализируйте параметры. Например в init методе @PostConstruct.
 
