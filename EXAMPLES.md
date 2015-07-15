@@ -7,9 +7,12 @@
 3. В конфигурации диспетчера добавьте бин
 
 	<bean id="paginationBuilder" class="com.artglorin.web.utils.PaginationBuilderImpl" factory-method="getInstance" scope="prototype"/>
+
 4. Добавьте зависимость в необходимый контроллер.
+
 	@Autowired
 	private PaginationBuilder paginationBuilder;
+
 5. Инициализируйте параметры. Например в init методе @PostConstruct.
 
 	> Совет. Если ваши сущности хранятся в базе данных, храните информацию об их количестве в переменной контроллера и проследите, чтобы в вашем коде при изменении количества сущностей, менялась переменная.
@@ -20,7 +23,9 @@
 		paginationBuilder.setTotalItemsCount(itemsService.count());
 		...
 	}
+
 6. Используйте в методе обработчике запросов.
+
 	@RequestMapping("/listItems")
 	public String getItemsListView (@CookieValue(required = false, defaultValue = "10", value = "itemsListLise") Integer listSize,
 	                               @RequestParam(value = "page", defaultValue = "1", required = false) Integer page) {
@@ -32,7 +37,9 @@
 		model.addAttribute("Items", itemsService.findBetween(start, end));
 		return "some-view-name";
 	}
+
 7. Используйте Pagination в ViewResolver. Пример для Thymeleaf & Bootstrap
+
 	<nav th:if="${Pagination}" role="navigation"> <!-- Start pager -->
 	    <ul id="pager" class="pager"  th:with="url ='@{/listitems?page=}">
 	        <th:block th:if="${Pagination.existPreviousSet}">
