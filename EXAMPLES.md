@@ -1,3 +1,4 @@
+// @formatter:off
 # Pagination
 
 Пока один пример и советы по использованию в Spring
@@ -86,3 +87,5 @@
 	    `</ul>`
 
 	`</nav>`
+
+// @formatter:on
