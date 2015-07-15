@@ -18,17 +18,17 @@
 
 	> Совет. Если ваши сущности хранятся в базе данных, храните информацию об их количестве в переменной контроллера и проследите, чтобы в вашем коде при изменении количества сущностей, менялась переменная.
 
-	`@PostConstruct`
+	`@PostConstruct
 
-	`public void init(){`
+	public void init(){
 
-	    `...`
+	    ...
 
-		`paginationBuilder.setTotalItemsCount(itemsService.count());`
+		paginationBuilder.setTotalItemsCount(itemsService.count());
 
-		`...`
+		...
 
-	`}`
+	}`
 
 6. Используйте в методе обработчике запросов.
 
