@@ -17,3 +17,5 @@
 # Люди которые принимали участие в проекте
 
 Vladislav Verminsky aka Artglorin develop@artglorin.com
+
+Библиотека Apache.common.io http://commons.apache.org/proper/commons-io/index.html

@@ -11,16 +11,16 @@
   ```
 
 4. Добавьте зависимость в необходимый контроллер.
-  
+
   ```
-  	@Autowired 
+  	@Autowired
   	private PaginationBuilder paginationBuilder;
   ```
 
 5. Инициализируйте параметры. Например в init методе @PostConstruct.
 
 	> Совет. Если ваши сущности хранятся в базе данных, храните информацию об их количестве в переменной контроллера и проследите, чтобы в вашем коде при изменении количества сущностей, менялась переменная.
-	
+
   ```
       @PostConstruct
       public void init(){
@@ -34,15 +34,15 @@
 
   ```
   	@RequestMapping("/listItems")
-  	public String getItemsListView (  
-  			@CookieValue(required = false, defaultValue = "10", value = "itemsListLise") Integer listSize,  
-  			@RequestParam(value = "page", defaultValue = "1", required = false) Integer page) {  
-  		Pagination pagination = paginationBuilder.setCurrentPageNumber(page).setItemsListSize(listSize).build();  
-  		model.addAttribute("Pagination", pagination);  
-  		int start = (page - 1) * listSize;  
-  		int end = start + listSize;  
-  		model.addAttribute("Items", itemsService.findBetween(start, end));  
-  		return "some-view-name";  
+  	public String getItemsListView (
+  			@CookieValue(required = false, defaultValue = "10", value = "itemsListLise") Integer listSize,
+  			@RequestParam(value = "page", defaultValue = "1", required = false) Integer page) {
+  		Pagination pagination = paginationBuilder.setCurrentPageNumber(page).setItemsListSize(listSize).build();
+  		model.addAttribute("Pagination", pagination);
+  		int start = (page - 1) * listSize;
+  		int end = start + listSize;
+  		model.addAttribute("Items", itemsService.findBetween(start, end));
+  		return "some-view-name";
   	}
   ```
 
@@ -69,3 +69,8 @@
   	    </ul>
   	</nav>
   ```
+# ResourcesHelper
+
+---
+
+> Методы данного класса говорят сами за себя и приводить примеры смысла нет.

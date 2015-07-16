@@ -38,7 +38,7 @@ public class PaginationImpl implements Pagination {
 	private boolean nextSet;
 
 	/**
-	 * Список стрнаиц в наборе
+	 * Список страниц в наборе
 	 */
 	private List<Integer> pages;
 
@@ -48,33 +48,13 @@ public class PaginationImpl implements Pagination {
 	private boolean previousSet;
 
 
-	@Override
-	public int getCurrentPage () {
-
-		return current;
-	}
-
-	@Override
-	public List<Integer> getSetPages () {
-		return pages;
-	}
-
-	@Override
-	public int getFirstPageInSet () {
-		return pages.isEmpty() ? current : pages.get(0);
-	}
-
-	@Override
-	public int getLastPageInSet () {
-		return pages.isEmpty() ? current : pages.get(pages.size() - 1);
-	}
-
 	/**
 	 * Конструктор устанавливающий все необходимые параметры
+	 *
 	 * @param totalItemsCount общее число существующих элементов
-	 * @param currentPage номер текущей страницы
-	 * @param itemsListSize количество отображаемых элементов на страницу
-	 * @param pagesInSet количество страниц в наборе
+	 * @param currentPage     номер текущей страницы
+	 * @param itemsListSize   количество отображаемых элементов на страницу
+	 * @param pagesInSet      количество страниц в наборе
 	 */
 	PaginationImpl (int totalItemsCount, int currentPage, int itemsListSize, int pagesInSet) {
 
@@ -109,6 +89,27 @@ public class PaginationImpl implements Pagination {
 		this.previousSet = currentPage > pagesInSet;
 		// Установим метку того, что есть следующие страницы
 		this.nextSet = this.pages.get(pagesInCurrentView - 1) < totalPages;
+	}
+
+	@Override
+	public int getCurrentPage () {
+
+		return current;
+	}
+
+	@Override
+	public int getFirstPageInSet () {
+		return pages.isEmpty() ? current : pages.get(0);
+	}
+
+	@Override
+	public int getLastPageInSet () {
+		return pages.isEmpty() ? current : pages.get(pages.size() - 1);
+	}
+
+	@Override
+	public List<Integer> getSetPages () {
+		return pages;
 	}
 
 	@Override
