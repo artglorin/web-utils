@@ -18,7 +18,7 @@ package com.artglorin.web.utils;
 import java.util.List;
 
 /**
- * Интерфес для работы с нумерацией на веб страницах.
+ * Интерфейс для работы с нумерацией на веб страницах.
  *
  * @author Verminsky V.V. e-mail: develop@artglorin.com
  * @version 0.0.1
@@ -37,7 +37,7 @@ public interface Pagination {
 	int getFirstPageInSet ();
 
 	/**
-	 * @return номер последней старницы в наборе
+	 * @return номер последней страницы в наборе
 	 */
 	int getLastPageInSet ();
 

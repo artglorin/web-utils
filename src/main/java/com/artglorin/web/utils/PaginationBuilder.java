@@ -31,7 +31,7 @@ public interface PaginationBuilder {
 	int DEFAULT_LIST_SIZE = 10;
 
 	/**
-	 * Количество страниу в наборе
+	 * Количество страниц в наборе
 	 */
 	int DEFAULT_SHOWED_PAGES_COUNT = 10;
 
@@ -52,14 +52,6 @@ public interface PaginationBuilder {
 	PaginationBuilder setCurrentPageNumber (int page);
 
 	/**
-	 * Устанавливает общее количество существующих элементов
-	 *
-	 * @param totalItemsCount общее количество элементов
-	 * @return ссылку на себя для удобной настройки по цепочке
-	 */
-	PaginationBuilder setTotalItemsCount (int totalItemsCount);
-
-	/**
 	 * Устанавливает количество отображаемых элементов на каждой странице
 	 *
 	 * @param listSize количество элементов на странице
@@ -74,4 +66,16 @@ public interface PaginationBuilder {
 	 * @return ссылку на себя для удобной настройки по цепочке
 	 */
 	PaginationBuilder setPagesCountInSet (int pagesCountInSet);
+
+	/**
+	 * Устанавливает общее количество существующих элементов
+	 *
+	 * @param totalItemsCount общее количество элементов
+	 * @return ссылку на себя для удобной настройки по цепочке
+	 */
+	PaginationBuilder setTotalItemsCount (int totalItemsCount);
 }
+
+
+
+
